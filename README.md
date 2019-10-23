@@ -22,6 +22,14 @@
 
 方法：*这种算法通过量化源域和目标域之间数据分布的差异计算得到权重。对源域样本加权，减少源域中与目标域分布相差较大部分数据对学习过程的影响*
 
+3. Subspace Alignment for Domain Adaptation
+
+方法:*通过PCA方法提取出源域和目标域数据的主要特征，构造映射矩阵，将源域和目标域的数据映射到低维子空间中，减小源域和目标域数据分布的距离*
+
+4. Sampling Methods for Random Subspace Domain Adaptation
+
+方法：*通过贪婪算法选择源域数据，使得源域数据分布与目标域数据分布之间的距离最小。（每进行一次选择计算一次距离，如果距离增加则放弃本次选择的数据，如果距离减小则保留本次选择的数据）*
+
 # 强化迁移
 1. Importance Weighted Transfer of Samples in Reinforcement Learning
 
@@ -32,3 +40,14 @@
 
 方法：*每个任务分别用自己的数据和标签训练出一个模型，我们假设有一个可信的共享信息收集者收集这些模型的信息。在这个总的模型参数矩阵上加入噪声，用低秩法和组稀疏法就可以从加噪后的总参数矩阵上提取出共享信息用于各个模型参数的更新。*
 
+2. Differential-Private Data Publishing Through Component Analysis
+
+方法：*本文提出一种方法，通过PCA提取出数据的主要特征，在主要特征中加入噪声。基于加入噪声的的主要特征生成数据并发布，从而增加数据的效用并保护数据隐私*
+
+3. Wishart Mechanism for Differentially Private Principal Components Analysis
+
+方法：*本文提出一种基于差分隐私的主成分分析方法（Wishart mechanism）:通过在原始数据的协方差矩阵中加入满足wishart分布的噪声提高数据的效用*
+
+4. A Near-Optimal Algorithm for Differentially-Private Principal Components
+
+方法：*这篇文章跟上篇的区别是上一个是在PCA的过程中加噪，这篇文章是在PCA后对提取出的主要特征加噪，相比之下上一篇的效用好一些*
